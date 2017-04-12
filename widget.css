@@ -4,6 +4,7 @@ html{
   background:#ffc600;
   background-size: cover;
   font-style: sans-serif;
+  color: white;
 }
 *, *:before, *:after {
       box-sizing: inherit;
@@ -23,14 +24,15 @@ body{
   border:1px solid red;
   height:40rem;
   width:25rem;
+  background:url("http://www.visiontech4u.com/wp-content/uploads/2016/11/mobile-wallpaper-hd.jpg");
+  background-size:cover;
 }
 .header{
-  height:10%;
-  border:1px solid red;
+  height:5%;
 }
 .content{
-  border:1px solid red;
-  height:40%;
+  border-bottom:1px solid red;
+  height:45%;
 }
 .speak{
   position: relative;
@@ -43,4 +45,78 @@ body{
   border: 1px solid red;
   position: relative;
   top:30%;
+}
+
+/*header CHILD*/
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-end;
+}
+.battery-level{
+  position: relative;
+  background: #ffffff;
+  display: block;
+  height:75%;
+  width:25%;
+}
+.battery-level:before{
+  content:"";
+  position: absolute;
+  display:block;
+  background: transparent;
+  border:1px solid #ffffff;
+  height:1.5rem;  
+  width:6.9rem;
+  border-radius:2px;
+}
+.battery-level:after{
+  content:"";
+  display: block;
+  background: transparent;
+  border:1px solid #ffffff;
+  height:0.8rem;
+  width:0.6rem; 
+  position: absolute;
+  left:6.8rem;
+  top:0.35rem;
+}
+/*
+.chargebolt{
+  display: block;
+  position: absolute;
+  transform:rotate(50deg);
+}
+.chargebolt:before{
+  content:"";
+  display: block;
+  position: absolute;
+  width:0;
+  height:0;
+  border-bottom:1.50952em solid #e98300;
+  border-left: 0.8em solid transparent;
+  transform: rotate(0deg) skew(-5deg, -10deg);
+  -webkit-transform: rotate(0deg) skew(-5deg,-10deg);
+  top: -3.4rem;
+  left: 2.5rem;
+}
+.chargebolt:after{
+  content:"";
+  display: block;
+  position: absolute;
+  width: 0;
+  height:0;
+  border-top:1.50952em solid #e98300;
+  border-right: 0.8em solid transparent;
+  transform:rotate(180deg) skew(-deg,-10deg);
+ -webkit-transform: rotate(180deg) skew(-5deg, -10deg);
+ top:-2.5rem;
+ left:2.0rem;
+}*/
+.time-now{
+  display: flex;
+  height: 75%;
+  width:25%;
+  justify-content: center;
+  align-items: center;
 }

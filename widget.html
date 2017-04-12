@@ -9,7 +9,10 @@
   <body>
     <div class="container">
      <div class="header">
-       
+       <div class="header-child battery-level">
+         <div class="chargebolt"></div>
+       </div>
+       <div class="header-child time-now"><p>4:30</p></div>
      </div>
      <div class="content">
        
@@ -21,5 +24,19 @@
        
      </div>
     </div>
+
+    <script>
+      const battery = document.querySelector('.battery-level');
+      function batteryWidth(){
+        navigator.getBattery()
+            .then(data=>{
+              console.log(data);
+              let widthB = parseInt(data.level*25);
+              battery.style.width = `${widthB}%`;
+              console.log(`${widthB}%`);
+            });
+      }
+      batteryWidth();
+    </script>
   </body>
 </html>
