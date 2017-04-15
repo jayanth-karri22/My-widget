@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="widget.css" rel="stylesheet">
+
   </head>
   <body>
     <div class="container">
@@ -12,9 +13,9 @@
        <div class="header-child battery-level">
          <div class="chargebolt"></div>
        </div>
-       <div class="header-child time-now"><p>4:30</p></div>
+       <div class="header-child time-now"><p class="updateTime">4:30</p></div>
      </div>
-     <div class="content">
+     <div class="weather">
        
      </div>
      <div class="speak">
@@ -24,19 +25,54 @@
        
      </div>
     </div>
-
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSCmEBVyfnq3ddir2HNxLQPbhTgLxMX_A"
+  type="text/javascript"></script>
     <script>
       const battery = document.querySelector('.battery-level');
+      const timeNow = document.querySelector('.updateTime');
+      const weather = document.querySelector('.weather')
       function batteryWidth(){
         navigator.getBattery()
             .then(data=>{
               console.log(data);
-              let widthB = parseInt(data.level*25);
+              let widthB = parseInt(data.level*19);
               battery.style.width = `${widthB}%`;
-              console.log(`${widthB}%`);
+              if(data.level>0.4){battery.style.backgroundColor = "green";}
+              else if(data.level<0.4 && data.level>0.2){battery.style.backgroundColor = "orange";}
+              else{battery.style.backgroundColor = "red";}
             });
       }
-      batteryWidth();
+      function getTime(){
+        let min = new Date().getMinutes();
+        if(min<10){
+          min = "0" + min;
+        }
+        const hour = new Date().getHours();
+        let Time = hour + ":" + min;
+        timeNow.innerHTML = `${Time}`;
+      }
+        navigator.geolocation.getCurrentPosition((position)=>{  
+        let latitude = position.coords.latitude;
+        let longitude = position.coords.longitude;
+        var endpoint = 'http://api.openweathermap.org/data/2.5/weather?lat='+ latitude + '&lon=' +longitude+ '&appid=4756f76fd3c20a3590b8dbaa320ad8a7' ;
+        fetch(endpoint).then((blob)=>blob.json()).then((data)=>console.log(data));
+        console.log(endpoint);
+        console.log(latitude);
+        console.log(longitude);
+        /*  getJSON(endpoint, {
+            lat: position.coords.latitude,
+            lon: position.coords.longitude,
+            units: 'metric',
+            APPID: '4756f76fd3c20a3590b8dbaa320ad8a7'
+        }).done(function(weather) {
+            console.log(weather)
+        })*/
+        });
+
+        setInterval(getTime,20000);   
+        batteryWidth();
+        getTime();
+         /*const endpoint = "http://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b1b15e88fa797225412429c1c50c122a1";*/
     </script>
   </body>
 </html>

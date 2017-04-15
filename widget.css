@@ -1,7 +1,7 @@
 html{
   font-size:10px;
   box-sizing: border-box;
-  background:#ffc600;
+  background:url("https://www.xmple.com/wallpaper/black-blue-linear-gradient-1920x1080-c2-b0e0e6-000000-a-180-f-14.svg");
   background-size: cover;
   font-style: sans-serif;
   color: white;
@@ -13,7 +13,6 @@ body{
   display:flex;
   justify-content: space-around;
   align-items: center;
-  border:1px solid white;
   position: absolute;
   top:10%;
   left:10%;
@@ -21,28 +20,24 @@ body{
   width:80vw
 }
 .container{
-  border:1px solid red;
   height:40rem;
   width:25rem;
-  background:url("http://www.visiontech4u.com/wp-content/uploads/2016/11/mobile-wallpaper-hd.jpg");
+  background:url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSC-IViA7psPzb9uX9r-EFiWARmXc2-sBJ51fuvTNN8Zw1Tt1h77g");
   background-size:cover;
 }
 .header{
   height:5%;
 }
 .content{
-  border-bottom:1px solid red;
   height:45%;
 }
 .speak{
   position: relative;
   top : 10%;
   height: 10%;
-  border:1px solid red;
 }
 .footer{
   height: 10%;
-  border: 1px solid red;
   position: relative;
   top:30%;
 }
@@ -51,14 +46,14 @@ body{
 .header{
   display: flex;
   justify-content: space-between;
-  align-items:flex-end;
+  align-items:center;
 }
 .battery-level{
   position: relative;
   background: #ffffff;
   display: block;
-  height:75%;
-  width:25%;
+  height:50%;
+  width:18%;
 }
 .battery-level:before{
   content:"";
@@ -66,8 +61,8 @@ body{
   display:block;
   background: transparent;
   border:1px solid #ffffff;
-  height:1.5rem;  
-  width:6.9rem;
+  height:1.0rem;  
+  width:5.0rem;
   border-radius:2px;
 }
 .battery-level:after{
@@ -75,48 +70,17 @@ body{
   display: block;
   background: transparent;
   border:1px solid #ffffff;
-  height:0.8rem;
-  width:0.6rem; 
+  height:0.4rem;
+  width:0.3rem; 
   position: absolute;
-  left:6.8rem;
-  top:0.35rem;
+  left:4.9rem;
+  top:0.3rem;
 }
-/*
-.chargebolt{
-  display: block;
-  position: absolute;
-  transform:rotate(50deg);
-}
-.chargebolt:before{
-  content:"";
-  display: block;
-  position: absolute;
-  width:0;
-  height:0;
-  border-bottom:1.50952em solid #e98300;
-  border-left: 0.8em solid transparent;
-  transform: rotate(0deg) skew(-5deg, -10deg);
-  -webkit-transform: rotate(0deg) skew(-5deg,-10deg);
-  top: -3.4rem;
-  left: 2.5rem;
-}
-.chargebolt:after{
-  content:"";
-  display: block;
-  position: absolute;
-  width: 0;
-  height:0;
-  border-top:1.50952em solid #e98300;
-  border-right: 0.8em solid transparent;
-  transform:rotate(180deg) skew(-deg,-10deg);
- -webkit-transform: rotate(180deg) skew(-5deg, -10deg);
- top:-2.5rem;
- left:2.0rem;
-}*/
 .time-now{
   display: flex;
   height: 75%;
   width:25%;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  font-size:11px;
 }
